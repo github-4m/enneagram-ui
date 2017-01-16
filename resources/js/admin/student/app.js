@@ -1,0 +1,1 @@
+angular.module('studentApp', ['ui.bootstrap', 'ui.bootstrap.tooltip', 'defaultController', 'defaultService']);

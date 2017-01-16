@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="/resources/css/font-awesome.min.css">
+<link rel="stylesheet" href="/resources/css/style.css">
+<div class="header">
+  <div class="nav" ng-if="isHorizontalNavigation() && isNavigation()">
+    <div ng-if="isNavigation()">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="pull-left">
+              <a href="/"><img class="logo" src="/resources/images/enneagram-logo.png" \></a>
+            </div>
+            <div class="pull-left" ng-repeat="nav in navs">
+              <div class="nav-item" ng-class="{'selected' : nav.code == pageCode}">
+                <a id="{{'nav-item-' + $index}}" href="{{nav.link}}"><span ng-bind="nav.name"></span></a></div>
+            </div>
+            <div class="pull-right" uib-dropdown>
+              <div class="nav-toggle" uib-dropdown-toggle>
+                <i id="nav-toggle" class="fa fa-user fa-2x" uib-tooltip="developer" tooltip-placement="bottom"></i>
+              </div>
+              <div class="pull-right dropdown-menu" uib-dropdown-menu aria-labelledby="nav-toggle">
+                <ul>
+                  <li><a id="profile"><span>Profile</span></a></li>
+                  <li><a id="sign-out"><span>Sign out</span></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="vertical-nav" ng-if="!isHorizontalNavigation() && isNavigation()">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="pull-left">
+            <a href="/"><img class="logo" src="/resources/images/enneagram-logo.png" \></a>
+          </div>
+          <div class="pull-right" uib-dropdown>
+            <div class="vertical-nav-toggle" uib-dropdown-toggle>
+              <i id="vertical-nav-toggle" class="fa fa-bars fa-2x" uib-tooltip="developer"
+                 tooltip-placement="left"></i>
+            </div>
+            <div class="pull-right dropdown-menu" uib-dropdown-menu aria-labelledby="vertical-nav-toggle">
+              <ul>
+                <li class="nav-item" ng-class="{'selected' : nav.code == pageCode}" ng-repeat="nav in navs">
+                  <a id="{{'nav-item-' + $index}}" href="{{nav.link}}"><span ng-bind="nav.name"></span></a>
+                </li>
+                <hr \>
+                <li class="nav-item">
+                  <a id="profile"><span>Profile</span></a>
+                </li>
+                <li class="nav-item">
+                  <a id="sign-out"><span>Sign out</span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

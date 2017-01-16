@@ -1,0 +1,30 @@
+<html ng-app="studentApp">
+<head>
+  <title>Enneagram</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.min.js"></script>
+  <script src="/resources/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
+  <script src="/resources/js/admin/student/app.js"></script>
+  <script src="/resources/js/default/controller.js"></script>
+  <script src="/resources/js/default/service.js"></script>
+  <script>
+    var pageCode = 'student';
+  </script>
+</head>
+<body>
+<div ng-controller="headerCtrl">
+  <div ng-include="'/default/header.html'"></div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="body"></div>
+    </div>
+  </div>
+</div>
+<div ng-controller="footerCtrl">
+  <div ng-include="'/default/footer.html'"></div>
+</div>
+</body>
+</html>

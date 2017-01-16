@@ -1,0 +1,70 @@
+<html ng-app="loginApp">
+<head>
+  <title>Sign in to Enneagram - Enneagram</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-resource.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-cookies.min.js"></script>
+  <script src="/resources/js/ui-bootstrap-tpls-2.4.0.min.js"></script>
+  <script src="/resources/js/login/app.js"></script>
+  <script src="/resources/js/default/controller.js"></script>
+  <script src="/resources/js/default/service.js"></script>
+  <script src="/resources/js/login/controller.js"></script>
+  <script src="/resources/js/login/service.js"></script>
+  <script>
+    var pageCode = 'login';
+
+
+
+
+
+
+  </script>
+</head>
+<body>
+<div ng-controller="headerCtrl">
+  <div ng-include="'/default/header.html'"></div>
+</div>
+<div class="container" ng-controller="loginCtrl">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="body text-center">
+        <div class="login">
+          <div><h1>Sign in to Enneagram</h1></div>
+          <div class="section-box-login">
+            <div class="alert alert-{{alert.type}}" ng-repeat="alert in alerts" close="clickCloseAlert($index)" uib-alert>
+              <span ng-bind="alert.msg"></span>
+            </div>
+          </div>
+          <div class="section-box section-box-login">
+            <div class="vertical-form">
+              <div class="form-input"><span class="form-label pull-left">Username</span>
+                <div class="input-group-sm">
+                  <input id="username" class="form-control" type="text" name="username" ng-model="username"/>
+                </div>
+              </div>
+              <div class="form-input">
+                <span class="form-label pull-left">Password</span>
+                <a id="forgot-password" class="pull-right">Forgot password?</a>
+                <div class="input-group-sm">
+                  <input id="password" class="form-control" type="password" name="password"
+                         ng-model="password"/>
+                </div>
+              </div>
+              <div class="text-left">
+                <button id="sign-in" class="btn btn-sm btn-success" ng-click="clickSignIn()">Sign in</button>
+              </div>
+            </div>
+          </div>
+          <div class="section-box section-box-login">
+            Create your account <a id="sign-up">here</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-controller="footerCtrl">
+  <div ng-include="'/default/footer.html'"></div>
+</div>
+</body>
+</html>

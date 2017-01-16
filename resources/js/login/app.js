@@ -1,0 +1,1 @@
+angular.module('loginApp', ['ui.bootstrap', 'ui.bootstrap.tooltip', 'defaultController', 'defaultService', 'loginController', 'loginService']);
